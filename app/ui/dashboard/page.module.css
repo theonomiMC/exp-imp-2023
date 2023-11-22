@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 20px;
+  margin-block: 2rem;
+}
+.card {
+  padding: 1rem;
+  box-shadow: 2px 2px 1px rgba(107, 73, 73, 0.7);
+}
+.card p {
+  font-weight: bold;
+  color: brown;
+}
