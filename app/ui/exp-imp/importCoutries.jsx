@@ -31,7 +31,24 @@ const ImportCoutries = async () => {
     share: Number(el.share),
   }));
   let countryItems = await getTopImportCountryItems();
-  let treeData = getChartData(countryItems);
+
+  let treeData = [];
+  let data = countryItems.reduce((acc, curr) => {
+    (acc[curr?.country] ||= []).push(curr);
+    return acc;
+  }, {});
+  for (let [key, val] of Object.entries(data)) {
+    let obj = {
+      name: key,
+      children: val.map((el) => ({
+        name: el?.category,
+        size: Number(el?.cost),
+        pct: Number(el?.pct),
+      })),
+    };
+
+    treeData.push(obj);
+  }
 
   return (
     <div className={styles.container}>

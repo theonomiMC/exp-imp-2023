@@ -6,6 +6,7 @@ import {
 import styles from "./countries.module.css";
 import dynamic from "next/dynamic";
 import { currency, getChartData } from "@/app/lib/utils";
+import Link from "next/link";
 import { Suspense } from "react";
 import Loader from "../Loader";
 
@@ -30,7 +31,24 @@ const ExportCountries = async () => {
     share: Number(el.share),
   }));
   let countryItems = await getTopExportCountryItems();
-  let treeData = getChartData(countryItems);
+  let treeData = [];
+  let data = countryItems.reduce((acc, curr) => {
+    (acc[curr?.country] ||= []).push(curr);
+    return acc;
+  }, {});
+  for (let [key, val] of Object.entries(data)) {
+    let obj = {
+      name: key,
+      children: val.map((el) => ({
+        name: el?.category,
+        size: Number(el?.cost),
+        pct: Number(el?.pct),
+      })),
+    };
+
+    treeData.push(obj);
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>

@@ -238,11 +238,7 @@ const CustomTooltip = ({ active, payload }) => {
 };
 export default function TreeChart({ data }) {
   return (
-    <ResponsiveContainer
-      width="80%"
-      // width={600}
-      aspect={1.5}
-    >
+    <ResponsiveContainer width="80%" aspect={1.5}>
       <Treemap
         margin={"auto"}
         width={400}

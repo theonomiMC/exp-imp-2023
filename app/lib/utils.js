@@ -33,23 +33,23 @@ export const currency = (value) => {
   }).format(value);
 };
 
-export const getChartData = (arr) => {
-  let result = [];
-  let data = arr.reduce((acc, curr) => {
-    (acc[curr?.country] ||= []).push(curr);
-    return acc;
-  }, {});
-  for (let [key, val] of Object.entries(data)) {
-    let obj = {
-      name: key,
-      children: val.map((el) => ({
-        name: el?.category,
-        size: Number(el?.cost),
-        pct: Number(el?.pct),
-      })),
-    };
+// export const getChartData = (arr) => {
+//   let result = [];
+//   let data = arr.reduce((acc, curr) => {
+//     (acc[curr?.country] ||= []).push(curr);
+//     return acc;
+//   }, {});
+//   for (let [key, val] of Object.entries(data)) {
+//     let obj = {
+//       name: key,
+//       children: val.map((el) => ({
+//         name: el?.category,
+//         size: Number(el?.cost),
+//         pct: Number(el?.pct),
+//       })),
+//     };
 
-    result.push(obj);
-  }
-  return result;
-};
+//     result.push(obj);
+//   }
+//   return result;
+// };
