@@ -5,7 +5,9 @@ import {
 } from "@/app/lib/actions";
 import styles from "./countries.module.css";
 import dynamic from "next/dynamic";
-import { numFormater, currency } from "@/app/lib/utils";
+import { numFormater, currency, getChartData } from "@/app/lib/utils";
+import { Suspense } from "react";
+import Loader from "../Loader";
 
 // components/MyChart.js contains the recharts chart
 const BarChart = dynamic(() => import("../charts/Bar"), {
@@ -14,10 +16,7 @@ const BarChart = dynamic(() => import("../charts/Bar"), {
 const Tree = dynamic(() => import("../charts/TreeChart"), {
   ssr: false,
 });
-// components/MyChart.js contains the recharts chart
-// const FunnelChart = dynamic(() => import("../charts/FunnelC"), {
-//   ssr: false,
-// });
+
 const ImportCoutries = async () => {
   let products = await getTopImportedProducts();
   products = products.map((el) => ({
@@ -32,23 +31,7 @@ const ImportCoutries = async () => {
     share: Number(el.share),
   }));
   let countryItems = await getTopImportCountryItems();
-  let treeData = [];
-  let data = countryItems.reduce((acc, curr) => {
-    (acc[curr.country] ||= []).push(curr);
-    return acc;
-  }, {});
-  for (let [key, val] of Object.entries(data)) {
-    let obj = {
-      name: key,
-      children: val.map((el) => ({
-        name: el.category,
-        size: Number(el.cost),
-        pct: Number(el.pct),
-      })),
-    };
-
-    treeData.push(obj);
-  }
+  let treeData = getChartData(countryItems);
 
   return (
     <div className={styles.container}>
@@ -71,7 +54,13 @@ const ImportCoutries = async () => {
           </blockquote>
         </div>
         <div className={styles.chart}>
-          <BarChart data={countries} domain={[0, 2000000000]} type={"import"} />
+          <Suspense fallback={<Loader />}>
+            <BarChart
+              data={countries}
+              domain={[0, 2000000000]}
+              type={"import"}
+            />
+          </Suspense>
         </div>
       </section>
       <h1 className={styles.title}>
@@ -95,7 +84,9 @@ const ImportCoutries = async () => {
           </blockquote> */}
         </div>
         <div className={styles.chart}>
-          <Tree data={treeData} />
+          <Suspense fallback={<Loader />}>
+            <Tree data={treeData} />
+          </Suspense>
         </div>
       </section>
       <h1 className={styles.title}>
@@ -123,7 +114,7 @@ const ImportCoutries = async () => {
           </li>
           <div className={styles.rows}>
             {products.map((el) => (
-              <li className={styles.row}>
+              <li className={styles.row} key={el.id}>
                 <div className={styles.col}>{el.category}</div>
                 <div className={styles.cost}>{currency(el.cost)}</div>
                 <div className={styles.cost}>

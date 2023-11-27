@@ -98,3 +98,44 @@ small {
 .recharts-responsive-container {
   margin: 0 auto;
 }
+.load-wrapper {
+  position: relative;
+  width: 100px;
+  margin: auto;
+}
+.loader1 {
+  position: absolute;
+  left: 10px;
+
+  border-radius: 50%;
+  border-top: 10px solid #b91c1c;
+  width: 90px;
+  height: 90px;
+  animation: spinner1 4s linear infinite;
+}
+.loader2 {
+  position: absolute;
+  right: 20px;
+
+  border-radius: 50%;
+  border-top: 10px solid #f59e0b;
+  width: 90px;
+  height: 90px;
+  animation: spinner2 4s linear infinite;
+}
+@keyframes spinner1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner2 {
+  100% {
+    transform: rotate(0deg);
+  }
+  0% {
+    transform: rotate(360deg);
+  }
+}

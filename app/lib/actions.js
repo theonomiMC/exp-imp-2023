@@ -105,7 +105,7 @@ export async function getTopExportCountryItems() {
 export async function getTopImportedProducts() {
   try {
     const data = await sql`
-          SELECT category, cost, ROUND(cost/(SELECT SUM(import) FROM monthly),3
+          SELECT id,category, cost, ROUND(cost/(SELECT SUM(import) FROM monthly),3
           ) AS share FROM products
           WHERE mode='import'
           ORDER BY cost DESC
@@ -120,7 +120,7 @@ export async function getTopImportedProducts() {
 export async function getTopExportedProducts() {
   try {
     const data = await sql`
-          SELECT category, cost, ROUND(cost/(SELECT SUM(export) FROM monthly),3
+          SELECT id,category, cost, ROUND(cost/(SELECT SUM(export) FROM monthly),3
           ) AS share FROM products
           WHERE mode='export'
           ORDER BY cost DESC

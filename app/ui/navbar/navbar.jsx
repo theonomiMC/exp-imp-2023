@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <nav className={styles.container}>
       <div>
-        <Image src="./logo.svg" width={70} height={70} />
+        <Image src="./logo.svg" width={70} height={70} alt="DTL logo" />
       </div>
       <div className={styles.wrapper}>
         <h2 className={styles.title}>
