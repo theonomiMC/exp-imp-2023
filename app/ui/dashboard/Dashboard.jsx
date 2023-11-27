@@ -1,22 +1,34 @@
-"use client";
 import React from "react";
-import { getTotal } from "../../lib/utils";
-import styles from "./page.module.css";
+import { getTotalExport, getTotalImport } from "../../lib/actions";
+import {
+  ArrowDownRightIcon,
+  ArrowUpRightIcon,
+} from "@heroicons/react/24/outline";
+import styles from "./dashboard.module.css";
+import { numFormater } from "@/app/lib/utils";
+import Card from "./Card";
+import clsx from "clsx";
 
-const Dashboard = ({ data }) => {
-  const totalImports = getTotal(data);
-  const totalExports = getTotal(data);
-
+const Dashboard = async () => {
+  const totalExport = await getTotalExport();
+  const totalImport = await getTotalImport();
+  console.log(typeof numFormater(totalExport));
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
-        <h2>Total Export</h2>
-        <p>{totalExports("export")}</p>
-      </div>
-      <div className={styles.card}>
-        <h2>Total Import</h2>
-        <p>{totalImports("import")}</p>
-      </div>
+      <Card
+        text={"Total Export"}
+        number={numFormater(totalExport, true)}
+        href={"/export"}
+      >
+        <ArrowUpRightIcon className={clsx(styles.svg, styles.exportSvg)} />
+      </Card>
+      <Card
+        text={"Total Import"}
+        number={numFormater(totalImport, true)}
+        href={"/import"}
+      >
+        <ArrowDownRightIcon className={clsx(styles.svg, styles.importSvg)} />
+      </Card>
     </div>
   );
 };

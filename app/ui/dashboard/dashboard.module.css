@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.dashboard {
+  display: flex;
+  gap: 20px;
+}
+.card {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 0.125rem;
+  border-width: 1px;
+  background-color: #ffffff;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.svgBox {
+  padding: 1rem;
+  /* background-color: #34d399; */
+}
+.svg {
+  width: 3rem;
+  height: 3rem;
+}
+.content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.05em;
+  color: #434345;
+}
+.number {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.importSvg {
+  color: #334293;
+}
+.exportSvg {
+  color: #f24b51;
+}

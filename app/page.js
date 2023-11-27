@@ -1,15 +1,16 @@
-// import { ArrowRightIcon } from "@heroicons/react/24/outline";
-
-import styles from "./page.module.css";
-import Dashboard from "./ui/dashboard/Dashboard";
+import styles from "@/app/ui/home.module.css";
+import Dashboard from "@/app/ui/dashboard/Dashboard";
+import MonthReport from "./ui/month-report/MonthReport";
 
 export default async function Home() {
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>
-        Georgia Export - Import January-October 2023
+      <h1 className={styles.mainTitle}>
+        EXTERNAL MERCHANDISE TRADE OF GEORGIA
       </h1>
-      {/* <Dashboard data={data} /> */}
+      <h2 className={styles.subtitle}>IN JANUARY-OCTOBER 2023</h2>
+      <Dashboard />
+      <MonthReport />
     </main>
   );
 }
