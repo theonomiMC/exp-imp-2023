@@ -18,8 +18,8 @@ export async function getMonthlyReports() {
 export async function getTotalExport() {
   try {
     const data = await sql`
-          SELECT SUM(cost) FROM monthly
-          WHERE mode='export'
+          SELECT SUM(export) FROM monthly
+          
       `;
     const totalExport = Number(data.rows[0].sum);
     return totalExport;
@@ -33,8 +33,8 @@ export async function getTotalExport() {
 export async function getTotalImport() {
   try {
     const data = await sql`
-          SELECT SUM(cost) FROM monthly
-          WHERE mode='import'
+          SELECT SUM(import) FROM monthly
+     
       `;
     const totalImport = Number(data.rows[0].sum);
     return totalImport;

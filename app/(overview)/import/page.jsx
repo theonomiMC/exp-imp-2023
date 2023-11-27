@@ -1,5 +1,4 @@
 import React from "react";
-import { Metadata } from "next";
 import ImportCoutries from "../../ui/exp-imp/importCoutries";
 
 export const metadata = {
