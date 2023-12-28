@@ -1,17 +1,21 @@
 import styles from "./footer.module.css";
+import Link from "next/link";
 
 const links = [
   {
     id: 1,
     name: "Contact",
+    url: "/contact/#info",
   },
   {
     id: 2,
     name: "Materials",
+    url: "/contact/#materials",
   },
   {
     id: 3,
-    name: "Code",
+    name: "Kaggle",
+    url: "/contact/#kaggle-code",
   },
 ];
 const Footer = () => {
@@ -19,9 +23,9 @@ const Footer = () => {
     <footer className={styles.footer}>
       <ul className={styles.list}>
         {links.map((link) => (
-          <li className={styles.item} key={link.id}>
-            {link.name}
-          </li>
+          <Link href={link.url} key={link.id}>
+            <li className={styles.item}>{link.name}</li>
+          </Link>
         ))}
       </ul>
     </footer>

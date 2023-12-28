@@ -15,10 +15,10 @@
   padding: 0;
   margin: 0;
 }
-html,
+/* html,
 body {
   height: 100%;
-}
+} */
 html {
   scroll-behavior: smooth;
 }
@@ -102,48 +102,64 @@ select option {
   padding: 0.6rem;
   background: white;
 }
-.recharts-responsive-container {
-  margin: 0 auto;
+footer {
+  font-family: monospace;
+  color: #222;
 }
-.load-wrapper {
+.bar-chart-wrapper {
   position: relative;
   width: 200px;
   height: 200px;
   margin: auto;
 }
-.loader1 {
-  position: absolute;
-  left: 10px;
-  border-radius: 50%;
-  border-top: 10px solid #b91c1c;
-  width: 90px;
-  height: 90px;
-  animation: spinner1 4s linear infinite;
-}
-.loader2 {
-  position: absolute;
-  right: 20px;
 
-  border-radius: 50%;
-  border-top: 10px solid #f59e0b;
-  width: 90px;
-  height: 90px;
-  animation: spinner2 4s linear infinite;
+.loader {
+  position: absolute;
+  bottom: 0;
+  border-radius: 5px;
+  width: 40px;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
 }
-@keyframes spinner1 {
+.loader.bar1 {
+  left: 30px;
+  animation:
+    grow 2s 0.2s ease-in-out infinite alternate,
+    changeColor 6s linear infinite;
+}
+
+.loader.bar2 {
+  left: 80px;
+  animation:
+    grow 2s 0.4s ease-in-out infinite alternate,
+    changeColor 6s linear infinite;
+}
+
+.loader.bar3 {
+  left: 130px;
+  animation:
+    grow 2s 0.6s ease-in-out infinite alternate,
+    changeColor 6s linear infinite;
+}
+
+@keyframes grow {
   0% {
-    transform: rotate(0deg);
+    height: 30px;
   }
   100% {
-    transform: rotate(360deg);
+    height: 80px;
   }
 }
-@keyframes spinner2 {
-  100% {
-    transform: rotate(0deg);
-  }
+
+@keyframes changeColor {
   0% {
-    transform: rotate(360deg);
+    background-color: yellow;
+  }
+  50% {
+    background-color: green;
+  }
+  100% {
+    background-color: red;
   }
 }
 .chart {

@@ -20,27 +20,26 @@ const Navbar = () => {
     <nav className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.logo}>
-          <div className={styles.titleBox}>
-            <h1 className={styles.title}>
-              <Link href="/">
-                Data<span>Sis</span>
-              </Link>
-            </h1>
-          </div>
+          <h1 className={styles.title}>
+            <Link href="/">
+              Data<span>Sis</span>
+            </Link>
+          </h1>
         </div>
-
-        {links.map((link) => (
-          <Link
-            href={link.address}
-            key={link.name}
-            className={clsx(
-              styles.link,
-              pathname == link.address && styles.active
-            )}
-          >
-            {link.name}
-          </Link>
-        ))}
+        <div className={styles.navLinks}>
+          {links.map((link) => (
+            <Link
+              href={link.address}
+              key={link.name}
+              className={clsx(
+                styles.link,
+                pathname == link.address && styles.active
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
       </div>
     </nav>
   );

@@ -272,7 +272,7 @@ export async function getCountryTopImpProducts(country) {
       total_share: normilized(el.total_share, 3),
     }));
   } catch (error) {
-    console.error("Failed to fetch Country info", error);
+    console.error("Failed to fetch Country's imported products.", error);
     throw new Error("Failed to fetch Country's imported products.");
   }
 }
@@ -302,7 +302,7 @@ export async function getCountryTopExpProducts(country) {
       total_share: normilized(el.total_share, 3),
     }));
   } catch (error) {
-    console.error("Failed to fetch Country info", error);
+    console.error("Failed to fetch Country's exported products.", error);
     throw new Error("Failed to fetch Country's exported products.");
   }
 }

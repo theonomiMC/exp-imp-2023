@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Loader from "../Loader";
 
 const LineChart = dynamic(() => import("../charts/Line"), {
+  loading: () => <Loader />,
   ssr: false,
 });
 const Radar = dynamic(() => import("../charts/MonthRadar"), {

@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { currency, normilized } from "@/app/lib/utils";
 import styles from "./page.module.css";
 import dynamic from "next/dynamic";
+import Loader from "@/app/ui/Loader";
 
 // Dynamic metadata
 export async function generateMetadata({ params }) {
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }) {
   };
 }
 const ProductChart = dynamic(() => import("@/app/ui/charts/TradeBar"), {
+  loading: () => <Loader />,
   ssr: false,
 });
 const page = async ({ params }) => {
@@ -27,7 +29,7 @@ const page = async ({ params }) => {
   const data = await getCountry(slug);
   const exportedProcucts = await getCountryTopExpProducts(slug);
   const importedProducts = await getCountryTopImpProducts(slug);
-  console.log(importedProducts);
+
   if (!data.length) {
     return notFound();
   }

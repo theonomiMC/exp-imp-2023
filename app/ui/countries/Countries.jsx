@@ -30,13 +30,7 @@ const Countries = ({ data }) => {
   return (
     <div className={styles.table}>
       {sortedData.map((d) => (
-        <div
-          key={d.country}
-          className={styles.content}
-          style={{
-            backgroundColor: getColorBasedOnImportShare(d.import_share),
-          }}
-        >
+        <div key={d.country} className={styles.content}>
           <p>
             <Link href={`/trade-partners/${d.country}`}>{d.country}</Link>
           </p>
@@ -53,8 +47,3 @@ const Countries = ({ data }) => {
 };
 
 export default Countries;
-
-// Helper function to determine background color based on import_share
-const getColorBasedOnImportShare = (importShare) => {
-  return `hsl(250, 40%, ${importShare})`;
-};
