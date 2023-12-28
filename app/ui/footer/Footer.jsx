@@ -5,17 +5,17 @@ const links = [
   {
     id: 1,
     name: "Contact",
-    url: "/contact/#info",
+    url: "/resources/#info",
   },
   {
     id: 2,
     name: "Materials",
-    url: "/contact/#materials",
+    url: "/resources/#materials",
   },
   {
     id: 3,
     name: "Kaggle",
-    url: "/contact/#kaggle-code",
+    url: "/resources/#kaggle-code",
   },
   {
     id: 4,

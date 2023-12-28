@@ -1,15 +1,15 @@
 import React from "react";
-import Contact from "../ui/contact/Contact";
+import Resources from "../ui/resources/Resources";
 import styles from "./page.module.css";
 
 export const metadata = {
-  title: "DTL - Contact",
-  description: "Developer's contact information.",
+  title: "DTL - Resources",
+  description: "Website Resources information.",
 };
 const page = () => {
   return (
     <div className={styles.container}>
-      <Contact />
+      <Resources />
     </div>
   );
 };

@@ -10,8 +10,8 @@ const links = [
     address: "/trade-partners",
   },
   {
-    name: "Contact",
-    address: "/contact",
+    name: "Resources",
+    address: "/resources",
   },
 ];
 const Navbar = () => {

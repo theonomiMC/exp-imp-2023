@@ -1,6 +1,6 @@
-import styles from "./contact.module.css";
+import styles from "./resources.module.css";
 
-const Contact = () => {
+const Resources = () => {
   return (
     <div className={styles.container}>
       <section className={styles.section} id="info">
@@ -71,4 +71,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Resources;
