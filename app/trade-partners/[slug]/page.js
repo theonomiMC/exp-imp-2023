@@ -8,7 +8,6 @@ import { notFound } from "next/navigation";
 import { currency, normilized } from "@/app/lib/utils";
 import styles from "./page.module.css";
 import dynamic from "next/dynamic";
-import Loader from "@/app/ui/Loader";
 
 // Dynamic metadata
 export async function generateMetadata({ params }) {
@@ -20,7 +19,6 @@ export async function generateMetadata({ params }) {
 }
 const ProductChart = dynamic(() => import("@/app/ui/charts/TradeBar"), {
   ssr: false,
-  loader: () => <Loader />,
 });
 const page = async ({ params }) => {
   let { slug } = params;
