@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className={styles.container}>
       <section className={styles.section} id="info">
-        <h3>Contact</h3>
+        <h3>My Pages</h3>
         <ul className={styles.sectionList}>
           <li>
             <a
