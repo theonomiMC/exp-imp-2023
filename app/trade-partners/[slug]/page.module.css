@@ -33,6 +33,16 @@
   margin-top: 5px;
   font-weight: bold;
 }
+.note {
+  font-style: italic;
+  text-align: center;
+  margin-block: 1rem;
+  color: #a1a1a1;
+}
+.note a {
+  text-decoration: underline;
+  color: #41609c;
+}
 .charts {
   width: 100%;
   max-width: 600px;

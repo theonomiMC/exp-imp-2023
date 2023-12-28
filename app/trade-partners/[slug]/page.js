@@ -57,6 +57,13 @@ const page = async ({ params }) => {
             <ProductChart data={importedProducts} />
           </div>
         )}
+        <p className={styles.note}>
+          (You can find code definition on{" "}
+          <a href="https://www.rs.ge/CommodityCodes-en" target="_blank">
+            rs.ge
+          </a>
+          )
+        </p>
       </div>
     </div>
   );

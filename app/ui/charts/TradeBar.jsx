@@ -31,6 +31,9 @@ export default function TradeBar({ data }) {
         },
       },
     },
+    grid: {
+      show: false,
+    },
     title: {
       text: `Top ${data.length} Product categories by ${data[0]?.type}`,
       style: {
