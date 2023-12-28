@@ -17,6 +17,16 @@ const links = [
     name: "Kaggle",
     url: "/contact/#kaggle-code",
   },
+  {
+    id: 4,
+    name: "Countries",
+    url: "/trade-partners",
+  },
+  {
+    id: 5,
+    name: "Dashboard",
+    url: "/",
+  },
 ];
 const Footer = () => {
   return (
