@@ -51,7 +51,9 @@ const page = async ({ params }) => {
           </div>
         )}
         {importedProducts && importedProducts?.length > 1 && (
-          <ProductChart data={importedProducts} />
+          <div className={styles.charts}>
+            <ProductChart data={importedProducts} />
+          </div>
         )}
       </div>
     </div>
