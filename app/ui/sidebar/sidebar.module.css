@@ -1,0 +1,29 @@
+.container {
+  height: calc(100vh - 160px);
+  font-family: "Raleway", sans-serif;
+  width: 240px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15rem;
+  margin-left: 10px;
+  display: flex;
+  overflow-x: hidden;
+}
+.container > * {
+  color: #272727;
+}
+.list {
+  padding: 0.4rem 1.5rem;
+  border-right: 2px solid #ddd;
+}
+.listItem {
+  padding-block: 0.8rem;
+  margin-inline: 0.5rem;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: none;
+  }
+}

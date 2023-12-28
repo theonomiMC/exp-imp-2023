@@ -1,4 +1,17 @@
 .container {
-  margin-top: 5rem;
-  height: 100vh;
+  margin-top: 2rem;
+  margin-inline: auto;
+  width: 100%;
+  justify-content: space-between;
+}
+.radars {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+@media screen and (max-width: 1150px) {
+  .radars {
+    flex-direction: column;
+    align-items: center;
+  }
 }

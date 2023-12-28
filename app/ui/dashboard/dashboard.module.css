@@ -1,54 +1,83 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: auto;
 }
-
-@media (min-width: 640px) {
+@media screen and (max-width: 991px) {
   .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
-}
-.dashboard {
-  display: flex;
-  gap: 20px;
 }
 .card {
   display: flex;
-  overflow: hidden;
-  align-items: center;
-  border-radius: 0.125rem;
-  border-width: 1px;
-  background-color: #ffffff;
-  box-shadow:
-    0 1px 3px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  gap: 20px;
+  justify-content: space-between;
+  width: auto;
+  max-width: 260px;
+  height: 150px;
+  color: #272727;
+  padding: 2rem;
+
+  box-shadow: 0px 7px 24px rgba(100, 100, 100, 0.4);
 }
+.container_card {
+  border-radius: 10px;
+}
+.bgGreen {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgb(179, 231, 204) 0%,
+    rgb(104, 214, 53) 90%
+  );
+}
+.bgBlue {
+  background-image: radial-gradient(
+    circle farthest-corner at 92.3% 71.5%,
+    rgba(83, 138, 214, 1) 0%,
+    rgba(134, 231, 214, 1) 90%
+  );
+}
+.bgRed {
+  background-image: linear-gradient(
+    111.5deg,
+    rgb(226, 182, 161) -7.2%,
+    rgba(237, 3, 32, 0.87) 100.2%
+  );
+}
+.bgYellow {
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(249, 232, 51, 1) 0%,
+    rgba(250, 196, 59, 1) 100.2%
+  );
+}
+
 .svgBox {
-  padding: 1rem;
-  /* background-color: #34d399; */
+  padding: 0.7rem;
+  border: 1px dashed #272727;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .svg {
-  width: 3rem;
-  height: 3rem;
+  max-width: 2.5rem;
+  height: auto;
+  margin: auto;
 }
-.content {
-  padding-left: 1rem;
-  padding-right: 1rem;
+
+.cardDesc {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #3f3f55;
+  text-align: left;
 }
-.text {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  letter-spacing: 0.05em;
-  color: #434345;
-}
-.number {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.importSvg {
-  color: #334293;
-}
-.exportSvg {
-  color: #f24b51;
+.cardTitle {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-size: 0.9rem;
 }

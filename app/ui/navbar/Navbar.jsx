@@ -1,31 +1,33 @@
 "use client";
 import Link from "next/link";
 import { clsx } from "clsx";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import styles from "./navbar.module.css";
 
 const links = [
   {
-    name: "Import",
-    address: "/import",
+    name: "Countries",
+    address: "/trade-partners",
   },
   {
-    name: "Export",
-    address: "/export",
+    name: "Contact",
+    address: "/contact",
   },
 ];
 const Navbar = () => {
   const pathname = usePathname();
   return (
     <nav className={styles.container}>
-      <div>
-        <Image src="./logo.svg" width={70} height={70} alt="DTL logo" />
-      </div>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>
-          <Link href="/">Data Analysis</Link>
-        </h2>
+        <div className={styles.logo}>
+          <div className={styles.titleBox}>
+            <h1 className={styles.title}>
+              <Link href="/">
+                Data<span>Sis</span>
+              </Link>
+            </h1>
+          </div>
+        </div>
 
         {links.map((link) => (
           <Link

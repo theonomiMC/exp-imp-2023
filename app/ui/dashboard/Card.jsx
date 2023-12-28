@@ -1,17 +1,23 @@
 import Link from "next/link";
 import styles from "./dashboard.module.css";
+import clsx from "clsx";
 
-const Card = ({ text, number, href, children }) => {
+const Card = ({ text, number, children, color }) => {
+  const cardClass = clsx(styles.card, {
+    [styles.card]: true,
+    [styles.bgRed]: color === "bgRed",
+    [styles.bgBlue]: color === "bgBlue",
+    [styles.bgYellow]: color === "bgYellow",
+    [styles.bgGreen]: color === "bgGreen",
+  });
   return (
-    <Link href={href}>
-      <div className={styles.card}>
-        <div className={styles.svgBox}>{children}</div>
-        <div className={styles.content}>
-          <h3 className={styles.text}>{text}</h3>
-          <p className={styles.number}>{number}</p>
-        </div>
+    <div className={cardClass}>
+      <div className={styles.container_card}>
+        <h3 className={styles.cardTitle}>{text}</h3>
+        <p className={styles.cardDesc}>{number}</p>
       </div>
-    </Link>
+      <div className={styles.svgBox}>{children}</div>
+    </div>
   );
 };
 

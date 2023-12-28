@@ -9,20 +9,20 @@ export const numFormater = (number, type = false) => {
   if (typeof number !== "number") {
     number = Number(number);
   }
-  if (number >= 1000000000) {
+  if (Math.abs(number) >= 1000000000) {
     return type == true
       ? (number / 1000000000).toFixed(2).toString() + "B"
       : (number / 1000000000).toString() + "B";
-  } else if (number > 1000000) {
+  } else if (Math.abs(number) > 1000000) {
     return type == true
       ? (number / 1000000).toFixed(2).toString() + "M"
       : (number / 1000000).toString() + "M";
-  } else if (number > 1000) {
+  } else if (Math.abs(number) > 1000) {
     return type == true
       ? (number / 1000).toFixed(2).toString() + "K"
       : (number / 1000).toString() + "K";
   } else {
-    return number.toString();
+    return Number(number.toFixed(2));
   }
 };
 
@@ -33,23 +33,4 @@ export const currency = (value) => {
   }).format(value);
 };
 
-// export const getChartData = (arr) => {
-//   let result = [];
-//   let data = arr.reduce((acc, curr) => {
-//     (acc[curr?.country] ||= []).push(curr);
-//     return acc;
-//   }, {});
-//   for (let [key, val] of Object.entries(data)) {
-//     let obj = {
-//       name: key,
-//       children: val.map((el) => ({
-//         name: el?.category,
-//         size: Number(el?.cost),
-//         pct: Number(el?.pct),
-//       })),
-//     };
-
-//     result.push(obj);
-//   }
-//   return result;
-// };
+export const normilized = (val, dec = 2) => Number(val.toFixed(dec));

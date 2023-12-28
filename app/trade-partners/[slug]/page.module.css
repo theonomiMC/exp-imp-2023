@@ -1,0 +1,40 @@
+.container {
+  margin: 4rem auto;
+  /* display: flex; */
+  width: 90%;
+  max-width: 1024px;
+  color: black;
+}
+.title {
+  color: #222;
+  text-align: center;
+  margin-block: 1.5rem 2rem;
+}
+.info {
+  width: 400px;
+  max-width: 100%;
+  height: 200px;
+  margin: 4rem auto;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info p {
+  margin: 0;
+  line-height: 1.5;
+  padding-bottom: 1rem;
+}
+
+.info small {
+  margin-top: 5px;
+  font-weight: bold;
+}
+.charts {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+}

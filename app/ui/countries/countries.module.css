@@ -1,0 +1,11 @@
+.content {
+  margin-inline: auto;
+  max-width: 200px;
+  padding: 5px;
+  margin-block: 0.5rem 1rem;
+  font-size: 1rem;
+}
+.table {
+  display: flex;
+  flex-wrap: wrap;
+}

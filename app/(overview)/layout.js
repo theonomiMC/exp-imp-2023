@@ -1,8 +1,4 @@
-import { Inter } from "next/font/google";
-import styles from "./page.module.css";
-import Navbar from "../ui/navbar/navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import Sidebar from "../ui/sidebar/Sidebar";
 
 export const metadata = {
   title: "DTL",
@@ -11,11 +7,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <div>
-      {/* <body className={inter.className}> */}
-      <Navbar />
-      <div className={styles.container}>{children}</div>
-      {/* </body> */}
-    </div>
+    <main>
+      <Sidebar />
+      {children}
+    </main>
   );
 }
