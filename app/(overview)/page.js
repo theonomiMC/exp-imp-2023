@@ -1,22 +1,21 @@
-import Dashboard from "@/app/ui/dashboard/Dashboard";
-import MonthReport from "../ui/month-report/MonthReport";
-import TradePartners from "../ui/trade-partners/TradePartners";
-import { Poppins, Raleway } from "next/font/google";
+import dynamic from "next/dynamic";
+import { Poppins } from "next/font/google";
 import styles from "@/app/ui/home.module.css";
 import clsx from "clsx";
-import Products from "../ui/top-products/Products";
 
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "700"],
 });
-// const raleway = Raleway({
-//   subsets: ["latin"],
-//   display: "swap",
-//   weight: ["300", "400", "500", "700"],
-// });
-export default async function Home() {
+const Dashboard = dynamic(() => import("../ui/dashboard/Dashboard"));
+const TradePartners = dynamic(
+  () => import("../ui/trade-partners/TradePartners")
+);
+const MonthReport = dynamic(() => import("../ui/month-report/MonthReport"));
+const Products = dynamic(() => import("../ui/top-products/Products"));
+
+export default function Home() {
   return (
     <div className={clsx(styles.container, poppins.className)}>
       <h1 className={styles.mainTitle}>

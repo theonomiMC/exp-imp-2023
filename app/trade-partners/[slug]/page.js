@@ -34,7 +34,7 @@ const page = async ({ params }) => {
     return notFound();
   }
   return (
-    <div className={styles.container}>
+    <div className="pageContainer centered">
       <h1 className={styles.title}> {slug.toUpperCase()}</h1>
       <div className={styles.info}>
         {data.map((d, idx) => (

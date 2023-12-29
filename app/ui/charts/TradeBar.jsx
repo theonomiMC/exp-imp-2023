@@ -36,9 +36,8 @@ export default function TradeBar({ data }) {
     },
     title: {
       text: `Top ${data.length} Product categories by ${data[0]?.type}`,
-      style: {
-        align: "center",
-      },
+      align: "center",
+      margin: 10,
     },
     colors: data[0]?.type == "Export" ? ["#3D89F9"] : ["#F24D5B"],
     dataLabels: {

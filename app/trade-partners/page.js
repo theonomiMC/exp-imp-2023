@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./page.module.css";
 import { getCountries } from "../lib/actions";
 import Sort from "../ui/Sort";
 import Countries from "../ui/countries/Countries";
@@ -12,8 +11,8 @@ const page = async () => {
   const data = await getCountries();
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Countries</h1>
+    <div className="pageContainer">
+      <h1 className="centered">COUNTRIES</h1>
       <Sort />
       <Countries data={data} />
     </div>

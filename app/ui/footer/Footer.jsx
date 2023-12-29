@@ -31,13 +31,13 @@ const links = [
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <ul className={styles.list}>
+      <div className={styles.list}>
         {links.map((link) => (
-          <Link href={link.url} key={link.id}>
-            <li className={styles.item}>{link.name}</li>
+          <Link href={link.url} key={link.id} className={styles.item}>
+            {link.name}
           </Link>
         ))}
-      </ul>
+      </div>
     </footer>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./sidebar.module.css";
 import Search from "./Search";
+import Link from "next/link";
 
 const links = [
   {
@@ -31,7 +32,7 @@ const Sidebar = () => {
         </li>
         {links.map((link) => (
           <li className={styles.listItem} key={link.id}>
-            <a href={link.id}>{link.title}</a>
+            <Link href={link.id}>{link.title}</Link>
           </li>
         ))}
       </ul>

@@ -1,6 +1,5 @@
 import React from "react";
 import Resources from "../ui/resources/Resources";
-import styles from "./page.module.css";
 
 export const metadata = {
   title: "DTL - Resources",
@@ -8,7 +7,7 @@ export const metadata = {
 };
 const page = () => {
   return (
-    <div className={styles.container}>
+    <div className="pageContainer">
       <Resources />
     </div>
   );

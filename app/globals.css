@@ -1,10 +1,5 @@
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --chart-green: #228b22;
-  --chart-red: #ff0000;
-
+  --font-mono: ui-monospace, "Roboto Mono", "Source Code Pro", monospace;
   --font-size-xxl: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
   --font-size-xxxl: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
   --font-size-xxxxl: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
@@ -15,22 +10,19 @@
   padding: 0;
   margin: 0;
 }
-/* html,
-body {
-  height: 100%;
-} */
 html {
   scroll-behavior: smooth;
 }
 body {
   margin: 0 auto;
-  color: #222;
+  color: #1d1d1d;
   background-color: white;
   overflow-x: hidden;
   font-family: "Georgia", serif;
 }
 h1 {
   font-size: var(--font-size-xxxxl);
+  color: #222;
 }
 h2 {
   font-size: var(--font-size-xxxl);
@@ -98,10 +90,6 @@ select {
   -webkit-appearance: none;
   appearance: none;
 }
-select option {
-  padding: 0.6rem;
-  background: white;
-}
 footer {
   font-family: monospace;
   color: #222;
@@ -163,7 +151,6 @@ footer {
   }
 }
 .chart {
-  /* max-width: 400px; */
   width: 100%;
   margin-top: 1.5rem;
   margin-inline: auto;
@@ -175,12 +162,12 @@ footer {
 .apexcharts-datalabel * {
   word-break: 14px !important;
 }
-@media screen and (max-width: 600px) {
-  /* .apexcharts-canvas svg {
-    width: 90% !important;
-    margin: 5px;
-  } */
-  /* .apexcharts-canvas {
-    overflow-x: scroll;
-  } */
+.pageContainer {
+  margin: 4rem auto;
+  width: 90%;
+  max-width: 1024px;
+  color: black;
+}
+.centered {
+  text-align: center;
 }
