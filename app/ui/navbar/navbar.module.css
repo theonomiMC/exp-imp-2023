@@ -49,8 +49,8 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 450px) {
-  .navLinks {
+@media screen and (max-width: 550px) {
+  .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
