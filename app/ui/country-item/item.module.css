@@ -1,0 +1,15 @@
+.container {
+  padding-block: 15px;
+  margin: 3rem auto;
+}
+.list {
+  max-width: 500px;
+  line-height: 1.5;
+  margin: 1.7rem auto;
+  text-align: left;
+  list-style-position: inside;
+}
+.list li {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}

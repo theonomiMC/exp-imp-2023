@@ -48,12 +48,14 @@ export default function Home() {
         <TradePartners />
         <div className={styles.textcontent}>
           <p>
-            In 2022, leading import countries included Turkiye with $2.060
-            billion, russia with $1.779 billion, and China with $1.062 billion.
-            Conversely, top export countries comprised China with $703 million,
-            russia with $551 million, and Bulgaria with $423 million. For a more
-            comprehensive overview of trade details in the year 2022, please
-            refer to additional information{" "}
+            In 2022, leading import countries included Turkiye with $2.06
+            billion ($2.02 billion in 2023), russia with $1.779 billion ($1.65
+            billion in 2023), and China with $1.062 billion ($1.14 billion in
+            2023). Conversely, top export countries comprised China with $703
+            million ($268.65 million - 2023), russia with $551 million ($514.98
+            million -2023), and Bulgaria with $423 million ($249.01 million
+            -2023). For a more comprehensive overview of trade details in the
+            year 2022, please refer to additional information{" "}
             <a
               href="https://www.kaggle.com/code/nataliabk/g-trade-2022"
               className={styles.extLink}

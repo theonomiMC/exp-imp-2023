@@ -85,17 +85,16 @@ export async function getGrowthRate() {
 export async function getTopExportCountries() {
   try {
     const data = await sql`
-    SELECT country, SUM(cost) AS total_cost, SUM(share) AS total_share
+    SELECT country, SUM(share) AS total_share
     FROM countries
     WHERE type = 'Export'
     GROUP BY country
-    ORDER BY total_cost DESC
+    ORDER BY total_share DESC
     LIMIT 10;
       `;
     const topExportCountries = data.rows;
     return topExportCountries.map((el) => ({
       ...el,
-      total_cost: numFormater(el.total_cost, true),
       total_share: Number(el.total_share.toFixed(2)),
     }));
   } catch (error) {
@@ -108,51 +107,21 @@ export async function getTopExportCountries() {
 export async function getTopImportCountries() {
   try {
     const data = await sql`
-    SELECT country, SUM(cost) AS total_cost, SUM(share) AS total_share
+    SELECT country, SUM(share) AS total_share
     FROM countries
     WHERE type = 'Import'
     GROUP BY country
-    ORDER BY total_cost DESC
+    ORDER BY total_share DESC
     LIMIT 10;
       `;
     const res = data.rows;
     return res.map((el) => ({
       ...el,
-      total_cost: Number(el.total_cost.toFixed(2)),
       total_share: Number(el.total_share.toFixed(2)),
     }));
   } catch (error) {
     console.error("Failed to fetch main import countries:", error);
     throw new Error("Failed to fetch import countries.");
-  }
-}
-
-export async function getTopImportCountryItems() {
-  try {
-    const data = await sql`
-          SELECT id,cost,pct,category,country FROM top_countries_items
-          WHERE mode='import'
-          
-      `;
-    const topImpCountryItems = data.rows;
-    return topImpCountryItems;
-  } catch (error) {
-    console.error("Failed to fetch main import countries::", error);
-    throw new Error("Failed to fetch user.");
-  }
-}
-
-export async function getTopExportCountryItems() {
-  try {
-    const data = await sql`
-          SELECT id,cost,pct,category,country FROM top_countries_items
-          WHERE mode='export'
-      `;
-    const topExpCountryItems = data.rows;
-    return topExpCountryItems;
-  } catch (error) {
-    console.error("Failed to fetch main import countries::", error);
-    throw new Error("Failed to fetch user.");
   }
 }
 // Get top 20 imported products fro products database
@@ -200,8 +169,6 @@ export async function getExportedProducts() {
 }
 // Get all countries from countries database
 export async function getCountries() {
-  // const { sort } = query;
-
   try {
     const data = await sql`
     SELECT
@@ -268,7 +235,6 @@ export async function getCountryTopImpProducts(country) {
     const res = data.rows;
     return res.map((el) => ({
       ...el,
-      total_cost: numFormater(el.total_cost, true),
       total_share: normilized(el.total_share, 3),
     }));
   } catch (error) {
@@ -298,7 +264,6 @@ export async function getCountryTopExpProducts(country) {
     const res = data.rows;
     return res.map((el) => ({
       ...el,
-      total_cost: numFormater(el.total_cost, true),
       total_share: normilized(el.total_share, 3),
     }));
   } catch (error) {

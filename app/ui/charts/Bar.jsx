@@ -23,25 +23,14 @@ export default function Bar({ data, title, ...rest }) {
         fontSize: "14px",
         padding: 10,
         dataLabels: {
-          // position: "top",
           horizontal: true,
         },
       },
     },
     dataLabels: {
-      enabled: false,
-      textAnchor: "start",
-      style: {
-        colors: ["#222"],
-        fontSize: "16px",
-        fontWeight: "300",
-      },
-      formatter: function (val, opt) {
-        return (
-          opt.w.globals.labels[opt.dataPointIndex] +
-          ":  " +
-          numFormater(val, true)
-        );
+      // enabled: flase,
+      formatter: function (val) {
+        return val + "%";
       },
     },
     stroke: {
@@ -57,6 +46,9 @@ export default function Bar({ data, title, ...rest }) {
     yaxis: {
       labels: {
         show: true,
+        style: {
+          fontSize: 14,
+        },
       },
       formatter: function (value) {
         return "$ " + numFormater(value, true);
@@ -85,20 +77,21 @@ export default function Bar({ data, title, ...rest }) {
       },
       y: {
         title: {
-          formatter: function () {
-            return "";
+          formatter: function (val) {
+            return val;
           },
         },
 
         formatter: function (value) {
-          return "$ " + numFormater(value, true);
+          return value + "%";
         },
       },
     },
   };
   let series = [
     {
-      data: data.map((d) => d.total_cost),
+      name: "share in Total",
+      data: data.map((d) => d.total_share),
     },
   ];
 

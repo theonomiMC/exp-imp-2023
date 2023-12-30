@@ -13,7 +13,6 @@ const BarChart = dynamic(() => import("../charts/Bar"), {
 const TradePartners = async () => {
   let exportCountries = await getTopExportCountries();
   let importCountries = await getTopImportCountries();
-
   return (
     <div className={styles.container}>
       <BarChart title="Export" data={exportCountries} id="export" />

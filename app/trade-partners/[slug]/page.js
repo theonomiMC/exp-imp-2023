@@ -7,8 +7,7 @@ import {
 import { notFound } from "next/navigation";
 import { currency, normilized } from "@/app/lib/utils";
 import styles from "./page.module.css";
-import dynamic from "next/dynamic";
-import Loader from "@/app/ui/Loader";
+import CountryItem from "@/app/ui/country-item/CountryItem";
 
 // Dynamic metadata
 export async function generateMetadata({ params }) {
@@ -18,10 +17,6 @@ export async function generateMetadata({ params }) {
     description: `${decodeURIComponent(slug)}'s trade information`,
   };
 }
-const ProductChart = dynamic(() => import("@/app/ui/charts/TradeBar"), {
-  loading: () => <Loader />,
-  ssr: false,
-});
 const page = async ({ params }) => {
   let { slug } = params;
   slug = decodeURIComponent(slug);
@@ -29,7 +24,6 @@ const page = async ({ params }) => {
   const data = await getCountry(slug);
   const exportedProcucts = await getCountryTopExpProducts(slug);
   const importedProducts = await getCountryTopImpProducts(slug);
-
   if (!data.length) {
     return notFound();
   }
@@ -47,15 +41,11 @@ const page = async ({ params }) => {
         ))}
       </div>
       <div>
-        {exportedProcucts && exportedProcucts?.length > 1 && (
-          <div className={styles.charts}>
-            <ProductChart data={exportedProcucts} />
-          </div>
+        {exportedProcucts && exportedProcucts?.length > 0 && (
+          <CountryItem data={exportedProcucts} />
         )}
-        {importedProducts && importedProducts?.length > 1 && (
-          <div className={styles.charts}>
-            <ProductChart data={importedProducts} />
-          </div>
+        {importedProducts && importedProducts?.length > 0 && (
+          <CountryItem data={importedProducts} />
         )}
         <p className={styles.note}>
           (You can find code definition on{" "}

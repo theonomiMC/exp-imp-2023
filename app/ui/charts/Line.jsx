@@ -36,7 +36,7 @@ export default function Line({ data }) {
     },
     title: {
       text: "Export - Import in January - November 2023 ",
-      align: "left",
+      align: "center",
       style: {
         fontSize: "16px",
         color: "#666",
@@ -88,7 +88,6 @@ export default function Line({ data }) {
         options={options}
         series={series}
         maxwidth="600px"
-        // width="350px"
         height="300px"
       />
     </div>

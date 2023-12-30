@@ -14,10 +14,10 @@ export const numFormater = (number, type = false) => {
       ? (number / 1000000000).toFixed(2).toString() + "B"
       : (number / 1000000000).toString() + "B";
   } else if (Math.abs(number) > 1000000) {
-    return type == true
+    return type
       ? (number / 1000000).toFixed(2).toString() + "M"
       : (number / 1000000).toString() + "M";
-  } else if (Math.abs(number) > 1000) {
+  } else if (Math.abs(number) >= 1000) {
     return type == true
       ? (number / 1000).toFixed(2).toString() + "K"
       : (number / 1000).toString() + "K";

@@ -64,7 +64,6 @@ export default function MonthRadar({ data1, data2, title }) {
     fill: {
       opacity: 0.3,
     },
-    // colors: ["#FF4560", "#222"],
     markers: {
       size: 4,
       colors: ["#fff"],
@@ -80,19 +79,6 @@ export default function MonthRadar({ data1, data2, title }) {
     },
     xaxis: {
       categories: data1.map((d) => d.month),
-      // categories: [
-      //   "January",
-      //   "February",
-      //   "March",
-      //   "April",
-      //   "May",
-      //   "June",
-      //   "July",
-      //   "August",
-      //   "September",
-      //   "October",
-      //   "November",
-      // ],
     },
   };
 
