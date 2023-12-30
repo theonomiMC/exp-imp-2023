@@ -171,3 +171,9 @@ footer {
 .centered {
   text-align: center;
 }
+
+/* @media screen and (max-width: 450px) {
+  .apexchartsline {
+    width: 250px !important;
+  }
+} */

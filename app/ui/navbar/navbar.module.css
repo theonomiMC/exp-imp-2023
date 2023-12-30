@@ -34,8 +34,8 @@
   background-color: rgba(250, 196, 59, 1);
 }
 .link {
-  display: inline-block;
   border: 1px solid #ccc;
+  flex-shrink: 0;
   padding: 9px 18px;
   margin-left: 10px;
   text-align: center;

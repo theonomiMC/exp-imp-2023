@@ -88,7 +88,7 @@ export default function Line({ data }) {
         options={options}
         series={series}
         maxwidth="600px"
-        width="350px"
+        // width="350px"
         height="300px"
       />
     </div>
