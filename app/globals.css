@@ -3,6 +3,7 @@
   --font-size-xxl: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
   --font-size-xxxl: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
   --font-size-xxxxl: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xxxxxl: clamp(3.81rem, 5.18vw + 2.52rem, 6.66rem);
 }
 
 * {
@@ -171,9 +172,19 @@ footer {
 .centered {
   text-align: center;
 }
-
-/* @media screen and (max-width: 450px) {
-  .apexchartsline {
-    width: 250px !important;
-  }
-} */
+.not-found {
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 500px;
+  gap: 10px;
+  align-items: center;
+}
+.not-found-content p {
+  font-family: monospace;
+  margin-top: 0.7rem;
+}
+.not-found-content {
+  margin: 2rem auto;
+  color: #434345;
+  padding: 10px;
+}

@@ -20,11 +20,11 @@ const Navbar = () => {
     <nav className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.logo}>
-          <h1 className={styles.title}>
+          <h2 className={styles.title}>
             <Link href="/">
               Data<span>Sis</span>
             </Link>
-          </h1>
+          </h2>
         </div>
         <div className={styles.navLinks}>
           {links.map((link) => (

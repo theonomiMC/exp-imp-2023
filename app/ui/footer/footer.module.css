@@ -10,6 +10,7 @@
   padding: 1rem 0.7rem;
   flex-wrap: wrap;
   max-width: 1240px;
+  justify-content: center;
   margin: auto;
 }
 .item {
