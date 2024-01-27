@@ -13,7 +13,7 @@ import CountryItem from "@/app/ui/country-item/CountryItem";
 export async function generateMetadata({ params }) {
   const { slug } = params;
   return {
-    title: `DTL - ${decodeURIComponent(slug)}`,
+    title: `${decodeURIComponent(slug)} Export - Import 2023`,
     description: `${decodeURIComponent(slug)}'s trade information`,
   };
 }

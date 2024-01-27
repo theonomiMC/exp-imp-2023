@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Georgia's Dynamic Trade Analysis 2023 - Next.js Project
 
-## Getting Started
+Welcome to the GitHub repository for Georgia's Dynamic Trade Analysis web application built with Next.js. This project provides insights into Georgia's trade dynamics in the year 2023 (excluding December), including information on top export and import partners, product categories, as well as detailed statistics for individual countries.
+[DEMO](https://g-trade.vercel.app/)
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The web application is organized into the following sections:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Home Page:**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+   - Overview of Georgia's total exports and imports.
+   - Highlights of top export and import partners.
+   - Key product categories contributing to trade.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Countries Pages:**
+   - Individual pages for each country with detailed trade statistics.
+   - Total exports and imports for each country.
+   - Links to the top 5 exported and imported product categories for that country.
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Next.js:** The project is built using Next.js, a React framework for server-rendered applications.
+- **React:** For building dynamic and interactive user interfaces.
+- **CSS Modules:** Styling is implemented using CSS modules for better modularity.
+- **Data Visualization:** Utilizing ApexCharts (JavaScript charting library) for creating charts and graphs to visualize trade statistics.
+- **Server:** Data is fetched from a Vercel-created PostgreSQL server.

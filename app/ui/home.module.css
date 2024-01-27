@@ -36,8 +36,8 @@
   font-family: "Raleway", sans-serif;
   color: #333333;
 }
-.subtitle:not(h2:first-of-type) {
-  margin-block: 5rem 2rem;
+.subtitle:not(h3:first-of-type) {
+  margin-block: 4rem 2rem;
 }
 .charts {
   margin-top: 2rem;

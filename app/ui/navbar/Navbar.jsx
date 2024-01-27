@@ -1,9 +1,12 @@
 "use client";
 import Link from "next/link";
+import { Major_Mono_Display } from "next/font/google";
 import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
 import styles from "./navbar.module.css";
-
+import Image from "next/image";
+import Logo from "@/public/images/logo.png";
+const mono = Major_Mono_Display({ subsets: ["latin"], weight: "400" });
 const links = [
   {
     name: "Countries",
@@ -19,13 +22,10 @@ const Navbar = () => {
   return (
     <nav className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.logo}>
-          <h2 className={styles.title}>
-            <Link href="/">
-              Data<span>Sis</span>
-            </Link>
-          </h2>
-        </div>
+        <Link href="/">
+          <Image src={Logo} height={64} width={213} alt="trade_georgia" />
+        </Link>
+
         <div className={styles.navLinks}>
           {links.map((link) => (
             <Link

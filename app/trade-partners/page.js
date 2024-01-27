@@ -3,7 +3,7 @@ import { getCountries } from "../lib/actions";
 import Sort from "../ui/Sort";
 import Countries from "../ui/countries/Countries";
 export const metadata = {
-  title: "DTL - Partners",
+  title: "GTrade - Countries",
   description: "Georgia's Tradecoun Partners",
 };
 

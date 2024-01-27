@@ -18,12 +18,12 @@ const Products = dynamic(() => import("../ui/top-products/Products"));
 export default function Home() {
   return (
     <div className={clsx(styles.container, poppins.className)}>
-      <h1 className={styles.mainTitle}>
+      <h2 className={styles.mainTitle}>
         EXTERNAL MERCHANDISE TRADE OF GEORGIA
-      </h1>
-      <h2 className={styles.subtitle} id="kpi">
-        (January - November 2023)
       </h2>
+      <h3 className={styles.subtitle} id="kpi">
+        (January - November 2023)
+      </h3>
       <section className={styles.wrapper}>
         <Dashboard />
         <div className={styles.textcontent}>
@@ -41,9 +41,9 @@ export default function Home() {
         </div>
       </section>
 
-      <h2 className={styles.subtitle} id="trade-partners">
+      <h3 className={styles.subtitle} id="trade-partners">
         Trade Partners
-      </h2>
+      </h3>
       <section className={styles.wrapper}>
         <TradePartners />
         <div className={styles.textcontent}>
@@ -65,9 +65,9 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <h2 className={styles.subtitle} id="month-report">
+      <h3 className={styles.subtitle} id="month-report">
         Monthly Reports
-      </h2>
+      </h3>
       <section className={styles.wrapper}>
         <MonthReport />
         <div className={styles.textcontent}>
@@ -85,9 +85,9 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <h2 className={styles.subtitle} id="top-products">
+      <h3 className={styles.subtitle} id="top-products">
         Top Trade Products
-      </h2>
+      </h3>
       <section className={styles.wrapper}>
         <Products />
         <div className={styles.textcontent}>
