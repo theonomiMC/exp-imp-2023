@@ -5,7 +5,7 @@ import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
 import styles from "./navbar.module.css";
 import Image from "next/image";
-import Logo from "@/public/images/logo.png";
+import Logo from "@/public/images/logo.svg";
 const mono = Major_Mono_Display({ subsets: ["latin"], weight: "400" });
 const links = [
   {
@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className={styles.container}>
       <div className={styles.wrapper}>
         <Link href="/">
-          <Image src={Logo} height={64} width={213} alt="trade_georgia" />
+          <Image src={Logo} height={150} width={200} alt="trade_georgia" />
         </Link>
 
         <div className={styles.navLinks}>
